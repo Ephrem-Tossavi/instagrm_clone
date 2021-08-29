@@ -1,0 +1,8 @@
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @user.image.url, width: 200 %>
+</p>
+
+<h1>Page de <%= @user.name %></h1>
+<p>Adresse e-mail: <%= @user.email %></p>
+<p><%= link_to "Blogs_list", blogs_path%></p>

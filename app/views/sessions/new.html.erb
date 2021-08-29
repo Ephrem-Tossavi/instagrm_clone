@@ -1,0 +1,23 @@
+ <div class="container">
+    <div class="row">
+        
+        <div class="col bg-info">
+            <span class="Info">Instagram, partagez vos photos avec vos amis.</span>
+             <img src="https://w7.pngwing.com/pngs/16/46/png-transparent-made-in-kings-heath-instagram-facebook-female-graphy-instagram-logo-instagram-icon-text-trademark-magenta.png" class="image">
+        </div>
+        
+        <div class="col bg-warning"><h1> Log in </h1>
+           <div class="form">
+            <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+            <ul class="sign-up">
+                <li><%= f.label :email%></li>
+                <li><%= f.email_field :email%></li>
+                <li><%= f.label :password%> </li>
+                <li><%= f.password_field :password%> </li>
+                <li><span class="submit"><%= f.submit "Log in" %> </span></li>
+            </ul> 
+            <% end%>
+          </div> 
+        </div>
+    </div>
+</div>
