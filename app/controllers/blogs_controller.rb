@@ -19,9 +19,17 @@ class BlogsController < ApplicationController
   def edit
   end
 
+  def confirm
+    @blog = current_user.blogs.build(blog_params)
+    #@blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
+  end
+
   # POST /blogs or /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    #@blog = Blog.new(blog_params)
+
+    @blog = current_user.blogs.build(blog_params)
 
     respond_to do |format|
       if @blog.save
@@ -55,15 +63,15 @@ class BlogsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def blog_params
-      params.require(:blog).permit(:title, :content, :image, :user_id, :image, :image_cache)
-    end
-end
+  # Only allow a list of trusted parameters through.
+  def blog_params
+    params.require(:blog).permit(:title, :content, :image, :user_id, :image, :image_cache)
+  end
