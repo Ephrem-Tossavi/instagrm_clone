@@ -3,6 +3,9 @@ class User < ApplicationRecord
     
     has_many :blogs
 
+    #cette partie implémentée pour l'association type many-to-many
+    has_many :favorites, dependent: :destroy
+
     #validations pour les caractéristiques des colonnes des formulaires inscription et de connexion
     validates :name, presence: true, length: {maximum: 30}
     validates :email, presence: true, length: {maximum: 255}, format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
