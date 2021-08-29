@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    mount_uploader :image, ImageUploader
+    
     has_many :blogs
 
     #validations pour les caractéristiques des colonnes des formulaires inscription et de connexion
