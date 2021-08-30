@@ -1,8 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="container text-center">
+  <%if @user.image.url%> <%= image_tag @user.image.url, class: "", width: 300%> 
+  <%else%>
+  <p></p>
+  <%end%>
+
 <p>
-  <strong>Image:</strong>
-  <%= image_tag @user.image.url, width: 200 %>
+  <strong>Name:</strong>
+  <%= @user.name %>
 </p>
 
-<h1>Page de <%= @user.name %></h1>
-<p>Adresse e-mail: <%= @user.email %></p>
-<p><%= link_to "Blogs_list", blogs_path%></p>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-warning" %> | 
+<%= link_to 'Back', blogs_path , class: "btn btn-danger"%>
+

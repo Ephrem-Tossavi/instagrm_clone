@@ -1,40 +1,6 @@
 
-<div class="container">
-    <div class="row">
-        
-        <div class="col bg-info">
-            <span class="Info">Instagram, partagez vos photos avec vos amis.</span>
-             <img src="https://w7.pngwing.com/pngs/16/46/png-transparent-made-in-kings-heath-instagram-facebook-female-graphy-instagram-logo-instagram-icon-text-trademark-magenta.png" class="image">
-        </div>
-        
-        <div class="col bg-warning"><h1> S'inscrire </h1> 
-        <% if @user.errors.any? %>
-        <div id= "error_explanation">
-         <h2> <%= pluralize(@user.errors.count, "error")%> a interdit l'enregistrement de ce <%= @user.name%>: </h2> 
-         <ul> 
-         <% @user.errors.full_messages.each do |message|%> 
-         <li> <%= message%> </li> 
-         <% end%> 
-         </ul> 
-         </div>
-         <div class="form">
-            <% end%> 
-            <%= form_with(model: @user, local: true) do |form|%> 
-            <ul class="sign-up">
-                <li><%= form.label :name%> </li>
-                <li><%= form.text_field :name%></li>
-                <li><%= form.label :email%></li>
-                <li><%= form.email_field :email%></li>
-                <li><%= form.label :password%> </li>
-                <li><%= form.password_field :password%> </li>
-                <li><%= form.label :password_confirmation%> </li>
-                <li><%= form.password_field :password_confirmation%></li>
-                <li><%= form.label :image%></li>
-                <li><%= form.file_field :image%></li>
-                <li><span class="submit"><%= form.submit "Créer mon compte"%></span></li>
-            </ul> 
-            <% end%>
-        </div>
-    </div>
-</div>
+<h1>New User</h1>
 
+<%= render 'form', user: @user %>
+
+<%= link_to 'Back', users_path %>
