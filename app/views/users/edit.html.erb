@@ -2,5 +2,7 @@
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', current_user %>
+<%= link_to 'Show', @user, class: "btn btn-info"%> |
+<%= link_to 'Back', current_user, class: "btn btn-danger"%>
+
+<%= render 'blogs/footer'%>

@@ -2,48 +2,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
- 
-.bg-info {
-    width: 55%;
-    height: 100%;
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 400px;
+  padding: 0;
+  background-color: ghostwhite;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+header {
+    width: 340%;
+    background-color: #8a3ab9;
+    height: 12.2%;
+    margin: 0;
+    font-family: tahoma;
+  }
+
+  .navbar{
+    padding-top: 15px;
+  }
+
+  .col-md-offset-4{
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .container-fluid{
+    margin-left: 10px;
+  }
+  
+  footer {
+    height: 10%;
+    width: 100%;
+    background-color: #cd486b;
+    color: white;
+    font-size: 15px;
     position: absolute;
-    background-color: #fff;
-    left: 0;
+    bottom: 0;
+    text-align: center;
+  }
+
+
+  .notice {
+    color: green;
   }
   
-  .Info{
-    color: rgb(14, 56, 95);
-    font-size: 20px;
-    font-weight: 700;
-    width: 500px;
-    margin: 5px;
+  .field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
   }
   
-  .image {
-    position: relative;
-    left: 10px;
-    width: 500px;
-  }
-  
-  .bg-warning {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    background-color: ghostwhite;
-    left: 56%;
-  }
-  
-  form {
-    display: block;
-  }
-  
-  .sign-up {
-      margin: 0 auto;
-      list-style: none;
-    }
-  
-  .submit{
-    margin: 15px;
-    padding: 15px;
-    position: fixed;
+  .error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px 7px 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
   }

@@ -1,40 +1,50 @@
-<%= form_with(model: user, local: true) do |form| %>
-<% if user.errors.any? %>
-<div id="error_explanation">
-    <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-    <ul>
-        <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Instagram, partagez vos photos avec vos amis.</h2>
+            <img src="https://w7.pngwing.com/pngs/16/46/png-transparent-made-in-kings-heath-instagram-facebook-female-graphy-instagram-logo-instagram-icon-text-trademark-magenta.png" class="center-block", style="width: 300px;">
+        </div>
+        <div class="col-md-6">
+            <%= form_with(model: user, local: true) do |form| %>
+            <% if user.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            
+                <ul>
+                    <% user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+            <% end %>
+            
+            <div class="field">
+                <%= form.label :name %>
+                <%= form.text_field :name , class: "form-control", id: "name", placeholder: "Enter nom"%>
+            </div>
+            
+            <div class="field">
+                <%= form.label :email %>
+                <%= form.email_field :email , class: "form-control", id: "email", placeholder: "Enter email"%>
+            </div>
+            
+            <div class="field">
+                <%= form.label :password %>
+                <%= form.password_field :password , class: "form-control", id: "password", placeholder: "Enter password"%>
+            </div>
+            <div class="field">
+                <%= form.label :password_confirmation %>
+                <%= form.password_field :password_confirmation , class: "form-control", id: "password_confirmation", placeholder: "Confirmer password"%>
+            </div>
+            <div class="field">
+              <%= form.label :image %><br />
+             <%= form.file_field :image %>
+              <%= form.hidden_field :image_cache %>
+            </div>
+            <div class="actions" style="float:right;">
+                <%= form.submit %>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>
-<% end %>
-
-<div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name , class: "form-control"%>
-</div>
-
-<div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email , class: "form-control"%>
-</div>
-
-<div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password , class: "form-control"%>
-</div>
-<div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation , class: "form-control"%>
-</div>
-<div class="field">
-  <%= form.label :image %><br />
- <%= form.file_field :image %>
-  <%= form.hidden_field :image_cache %>
-</div>
-<div class="actions" style="float:right;">
-    <%= form.submit %>
-</div>
-<% end %>

@@ -12,5 +12,7 @@
 <% end %>
 <%= form_with(model: @blog, url: new_blog_path, local: true, method:"get") do |form| %>
   <%= form.hidden_field :image_cache %>
-  <%= form.submit "return", name: "back" %>
+  <%= form.submit "return", name: "back", class: "bnt bnt-danger"%>
 <% end %>
+
+<%= render 'blogs/footer'%>
