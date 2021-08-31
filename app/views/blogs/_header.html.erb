@@ -6,6 +6,7 @@
             <div class="col-md-3">
                 <%= link_to 'Blogs_list', blogs_path , class: "btn btn-info text-light"%>
                 <%= link_to 'New Blog', new_blog_path , class: "btn btn-warning text-light"%>
+                <%= link_to 'Favorites Blogs', favorites_path, class: "btn btn-success text-light"%>
             </div>
                 <% if logged_in? %>
             <div class="col-md-3">

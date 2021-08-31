@@ -8,4 +8,5 @@ class Blog < ApplicationRecord
 
   #validations
   validates :title, presence: true
+  validates :image, presence: true
 end

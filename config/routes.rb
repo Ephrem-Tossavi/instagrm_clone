@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "users#new"
+  #root "users#new"
   resources :blogs do
     collection do
       post :confirm 
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites
 
   #Définir le routage de letter_opener
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
